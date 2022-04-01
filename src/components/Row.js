@@ -1,10 +1,6 @@
-import React,{ useEffect } from "react";
+import React from "react";
 
 const Row = ({ rows, setRows }) => {
-
-  useEffect(()=>{
-   
-  },[rows]);
 
   const updateChanged = (index, type) => (e) => {
     const newRow = [...rows]; // copying the old datas array
@@ -26,8 +22,12 @@ const Row = ({ rows, setRows }) => {
   const allRows = rows.map((row, index) => {
     if (row.enable && row.opration === "+") result += parseInt(row.value);
     else if (row.enable && row.opration === "-") result -= parseInt(row.value);
+    if(row.id==='')
+      row.id=index;
+      
+      
       return (
-        <form onSubmit={(e) => e.preventDefault()} key={index}>
+        <form onSubmit={(e) => e.preventDefault()} key={row.id}>
           <label>*</label>
           <select onChange={updateChanged(index, "select")}>
             <option value="+">+</option>
@@ -40,7 +40,7 @@ const Row = ({ rows, setRows }) => {
             placeholder="enter number"
           />
           <button
-            onClick={()=>setRows(rows.filter((o, i) => index !== i))}>
+            onClick={()=>{setRows(rows.filter((o, i) => index !== i));}}>
             Delete
           </button>
           <button onClick={updateChanged(index, "click")}>
