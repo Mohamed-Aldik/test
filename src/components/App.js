@@ -10,6 +10,7 @@ function App({ resulRedux }) {
     setRows([
       ...rows,
       {
+        id:'',
         value: 0,
         opration: "+",
         enable: true,
