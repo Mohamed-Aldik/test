@@ -14,7 +14,7 @@ const Row = ({ rows, setRows }) => {
     }
     setRows(newRow);
   };
-  
+
  const handleDelete=(index)=>{
   const deleteRow =rows.splice(index,1);
   setRows(rows.filter(item => item !== deleteRow));
@@ -46,9 +46,8 @@ const Row = ({ rows, setRows }) => {
       </form>
     );
   });
-  console.log(rows);
-// console.log(rows.filter(({opration,enable}) => opration == "+" && enable ));
-// console.log(rows.filter(({opration,enable}) => opration === "-" && enable ));
+
+  
   return (
     <div>
       {allRows}  

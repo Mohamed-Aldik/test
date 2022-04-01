@@ -20,7 +20,6 @@ function App({ resulRedux }) {
   return (
     <>
       <button onClick={addEntryRow}>Add row</button>
-
       <Row rows={rows} setRows={setRows} />
     </>
   );
