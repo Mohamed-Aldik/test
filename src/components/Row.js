@@ -24,7 +24,7 @@ const Row = ({ rows, setRows }) => {
 
     return (
       <form
-        className="d-flex w-50 p-3 align-items-center justify-content-between"
+        className="d-flex align-items-center justify-content-between"
         onSubmit={(e) => e.preventDefault()}
         key={row.id}
       >
@@ -52,7 +52,7 @@ const Row = ({ rows, setRows }) => {
       
         <button
           type="button"
-          className="ms-2 btn btn-danger"
+          className="ms-2 btn-sm btn btn-sm btn-danger"
           onClick={() => {
             setRows(rows.filter((o, i) => index !== i));
           }}
@@ -60,7 +60,7 @@ const Row = ({ rows, setRows }) => {
           Delete
         </button>
         <button
-          className={`ms-2 btn btn-${row.enable ? "warning" : "secondary"}`}
+          className={`ms-2 btn-sm btn btn-sm btn-${row.enable ? "warning" : "secondary"}`}
           onClick={updateChanged(index, "click")}
         >
           {row.enable ? "Disable" : "Enable"}

@@ -19,8 +19,8 @@ function App({ resulRedux }) {
   };
 
   return (
-    <div className="container mt-5 mx-auto" >
-      <button type="button" className="btn btn-primary" onClick={addEntryRow}>Add row</button>
+    <div className="container mt-5" >
+      <button type="button" className="btn mb-3 btn-primary btn-sm" onClick={addEntryRow}>Add row</button>
       <Row rows={rows} setRows={setRows} />
     </div>
   );
